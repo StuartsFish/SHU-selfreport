@@ -126,8 +126,8 @@ def report_day(sess, t):
                 "p1_ContentPanel1_Collapsed": "true",
                 "p1_GeLSM_Collapsed": "false",
                 "p1_Collapsed": "false",
-                "p1$pImages$HFimgSuiSM": SuiSM,
-                "p1$pImages$HFimgXingCM": XingCM,
+#                 "p1$pImages$HFimgSuiSM": SuiSM,
+#                 "p1$pImages$HFimgXingCM": XingCM,
                 "F_STATE": generate_fstate_day(BaoSRQ, ShiFSH, ShiFZX,
                                                ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ)
             }, headers={
