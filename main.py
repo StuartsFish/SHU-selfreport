@@ -7,7 +7,11 @@ from pathlib import Path
 import yaml
 from bs4 import BeautifulSoup
 
+<<<<<<< HEAD
 from fstate_generator import generate_fstate_day, get_last_report
+=======
+from fstate_generator import generate_fstate_day, get_last_report, get_img_value
+>>>>>>> b429ab9940ff52353bc0985c3da6930aeddaec6f
 from login import login
 
 NEED_BEFORE = False  # 如需补报则置为True，否则False
@@ -61,12 +65,20 @@ def report_day(sess, t):
 
     BaoSRQ = t.strftime('%Y-%m-%d')
     ShiFSH, ShiFZX, ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ = get_last_report(sess, t)
+<<<<<<< HEAD
 #     SuiSM, XingCM = get_img_value(sess)
+=======
+    SuiSM, XingCM = get_img_value(sess)
+>>>>>>> b429ab9940ff52353bc0985c3da6930aeddaec6f
 
     print(f'是否在上海：{ShiFSH}', f'是否在校：{ShiFZX}')
     print(ddlSheng, ddlShi, ddlXian, f'###{XiangXDZ[-2:]}')
     print(f'是否为家庭地址：{ShiFZJ}')
+<<<<<<< HEAD
 #     print(f'随身码：{SuiSM}，行程码：{XingCM}')
+=======
+    print(f'随身码：{SuiSM}，行程码：{XingCM}')
+>>>>>>> b429ab9940ff52353bc0985c3da6930aeddaec6f
 
     for _ in range(RETRY):
         try:
@@ -126,10 +138,16 @@ def report_day(sess, t):
                 "p1_ContentPanel1_Collapsed": "true",
                 "p1_GeLSM_Collapsed": "false",
                 "p1_Collapsed": "false",
+<<<<<<< HEAD
 #                 "p1$pImages$HFimgSuiSM": SuiSM,
 #                 "p1$pImages$HFimgXingCM": XingCM,
+=======
+                "p1$pImages$HFimgSuiSM": SuiSM,
+                "p1$pImages$HFimgXingCM": XingCM,
+>>>>>>> b429ab9940ff52353bc0985c3da6930aeddaec6f
                 "F_STATE": generate_fstate_day(BaoSRQ, ShiFSH, ShiFZX,
-                                               ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ)
+                                               ddlSheng, ddlShi, ddlXian, XiangXDZ, ShiFZJ,
+                                               SuiSM, XingCM)
             }, headers={
                 'X-Requested-With': 'XMLHttpRequest',
                 'X-FineUI-Ajax': 'true'
